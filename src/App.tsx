@@ -3,11 +3,12 @@ import SkillOctagon from './components/SkillOctagon'
 import SkillControls from './components/SkillControls'
 import ProfileManager from './components/ProfileManager'
 import { StyledComponentsDemo } from './components/StyledComponents'
+import OctagonMerger from './components/OctagonMerger'
 import { useSkillStore } from './store/skillStore'
 
 function App() {
   const { skills } = useSkillStore()
-  const [activeTab, setActiveTab] = useState<'chart' | 'profiles' | 'demo'>('chart')
+  const [activeTab, setActiveTab] = useState<'chart' | 'profiles' | 'merge' | 'demo'>('chart')
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -46,6 +47,16 @@ function App() {
               💾 Profiles
             </button>
             <button
+              onClick={() => setActiveTab('merge')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'merge' 
+                  ? 'bg-indigo-500 text-white' 
+                  : 'bg-white text-indigo-500 hover:bg-indigo-50'
+              }`}
+            >
+              🔄 Merge
+            </button>
+            <button
               onClick={() => setActiveTab('demo')}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 activeTab === 'demo' 
@@ -77,6 +88,12 @@ function App() {
             </div>
           )}
           
+          {activeTab === 'merge' && (
+            <div className="w-full max-w-6xl mx-auto">
+              <OctagonMerger />
+            </div>
+          )}
+          
           {activeTab === 'demo' && (
             <div className="w-full max-w-4xl mx-auto">
               <StyledComponentsDemo />
@@ -88,10 +105,12 @@ function App() {
           <p>
             {activeTab === 'chart' && 'Adjust the sliders to see your skill octangle update in real-time'}
             {activeTab === 'profiles' && 'Save and manage multiple skill profiles with persistence'}
+            {activeTab === 'merge' && 'Combine two skill profiles to see their averaged result with smooth animations'}
             {activeTab === 'demo' && 'Showcase of styled-components and emotion CSS-in-JS libraries'}
           </p>
           <div className="mt-2 text-xs">
             {activeTab === 'profiles' && '💡 Your data is automatically saved to your browser'}
+            {activeTab === 'merge' && '🎯 Perfect for comparing team skills or tracking progress over time'}
             {activeTab === 'demo' && '🚀 Optimized with SWC plugins for better performance'}
           </div>
         </footer>
