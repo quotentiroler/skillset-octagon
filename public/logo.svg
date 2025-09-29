@@ -1,0 +1,55 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for contrast -->
+  <circle cx="100" cy="100" r="95" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Main octagon outline -->
+  <path d="M 100 20 L 141.42 41.42 L 162.84 82.84 L 162.84 117.16 L 141.42 158.58 L 100 180 L 58.58 158.58 L 37.16 117.16 L 37.16 82.84 L 58.58 41.42 Z" 
+        fill="none" 
+        stroke="#3b82f6" 
+        stroke-width="3"/>
+  
+  <!-- Grid lines (concentric octagons) -->
+  <path d="M 100 35 L 128.28 48.28 L 141.56 76.56 L 141.56 123.44 L 128.28 151.72 L 100 165 L 71.72 151.72 L 58.44 123.44 L 58.44 76.56 L 71.72 48.28 Z" 
+        fill="none" 
+        stroke="#94a3b8" 
+        stroke-width="1" 
+        opacity="0.6"/>
+  
+  <path d="M 100 50 L 115.14 55.14 L 120.28 70.28 L 120.28 129.72 L 115.14 144.86 L 100 150 L 84.86 144.86 L 79.72 129.72 L 79.72 70.28 L 84.86 55.14 Z" 
+        fill="none" 
+        stroke="#94a3b8" 
+        stroke-width="1" 
+        opacity="0.4"/>
+  
+  <!-- Radial lines -->
+  <line x1="100" y1="100" x2="100" y2="20" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="100" x2="141.42" y2="41.42" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="100" x2="162.84" y2="82.84" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="100" x2="162.84" y2="117.16" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="100" x2="141.42" y2="158.58" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="100" x2="100" y2="180" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="100" x2="58.58" y2="158.58" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="100" x2="37.16" y2="117.16" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Skill polygon (example data) -->
+  <path d="M 100 35 L 128.28 55.14 L 148.42 90.42 L 141.56 123.44 L 114.14 144.86 L 100 150 L 78.58 140.72 L 65.30 100.30 Z" 
+        fill="rgba(59, 130, 246, 0.3)" 
+        stroke="#3b82f6" 
+        stroke-width="2"/>
+  
+  <!-- Skill points -->
+  <circle cx="100" cy="35" r="3" fill="#ef4444" stroke="white" stroke-width="1"/>
+  <circle cx="128.28" cy="55.14" r="3" fill="#f97316" stroke="white" stroke-width="1"/>
+  <circle cx="148.42" cy="90.42" r="3" fill="#eab308" stroke="white" stroke-width="1"/>
+  <circle cx="141.56" cy="123.44" r="3" fill="#22c55e" stroke="white" stroke-width="1"/>
+  <circle cx="114.14" cy="144.86" r="3" fill="#06b6d4" stroke="white" stroke-width="1"/>
+  <circle cx="100" cy="150" r="3" fill="#8b5cf6" stroke="white" stroke-width="1"/>
+  <circle cx="78.58" cy="140.72" r="3" fill="#ec4899" stroke="white" stroke-width="1"/>
+  <circle cx="65.30" cy="100.30" r="3" fill="#3b82f6" stroke="white" stroke-width="1"/>
+  
+  <!-- Center point -->
+  <circle cx="100" cy="100" r="2" fill="#64748b"/>
+  
+  <!-- Title -->
+  <text x="100" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#475569">SKILL OCTANGLE</text>
+</svg>
