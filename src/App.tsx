@@ -2,11 +2,12 @@ import { useState } from 'react'
 import SkillOctagon from './components/SkillOctagon'
 import SkillControls from './components/SkillControls'
 import ProfileManager from './components/ProfileManager'
+import { StyledComponentsDemo } from './components/StyledComponents'
 import { useSkillStore } from './store/skillStore'
 
 function App() {
   const { skills } = useSkillStore()
-  const [showProfiles, setShowProfiles] = useState(false)
+  const [activeTab, setActiveTab] = useState<'chart' | 'profiles' | 'demo'>('chart')
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -22,17 +23,43 @@ function App() {
             Visualize your Tech Founder skills - define 8 key abilities on a scale of 1-10
           </p>
           
-          {/* Profile Toggle */}
-          <button
-            onClick={() => setShowProfiles(!showProfiles)}
-            className="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg font-medium transition-colors"
-          >
-            {showProfiles ? '📊 Show Chart' : '💾 Manage Profiles'}
-          </button>
+          {/* Tab Navigation */}
+          <div className="flex justify-center gap-2 mb-6">
+            <button
+              onClick={() => setActiveTab('chart')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'chart' 
+                  ? 'bg-indigo-500 text-white' 
+                  : 'bg-white text-indigo-500 hover:bg-indigo-50'
+              }`}
+            >
+              📊 Chart
+            </button>
+            <button
+              onClick={() => setActiveTab('profiles')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'profiles' 
+                  ? 'bg-indigo-500 text-white' 
+                  : 'bg-white text-indigo-500 hover:bg-indigo-50'
+              }`}
+            >
+              💾 Profiles
+            </button>
+            <button
+              onClick={() => setActiveTab('demo')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'demo' 
+                  ? 'bg-indigo-500 text-white' 
+                  : 'bg-white text-indigo-500 hover:bg-indigo-50'
+              }`}
+            >
+              ✨ CSS Demo
+            </button>
+          </div>
         </header>
         
         <div className="flex flex-col lg:flex-row items-start justify-center gap-8">
-          {!showProfiles ? (
+          {activeTab === 'chart' && (
             <>
               <div className="flex-shrink-0">
                 <SkillOctagon skills={skills} size={450} />
@@ -42,22 +69,30 @@ function App() {
                 <SkillControls />
               </div>
             </>
-          ) : (
+          )}
+          
+          {activeTab === 'profiles' && (
             <div className="w-full max-w-2xl mx-auto">
               <ProfileManager />
+            </div>
+          )}
+          
+          {activeTab === 'demo' && (
+            <div className="w-full max-w-4xl mx-auto">
+              <StyledComponentsDemo />
             </div>
           )}
         </div>
         
         <footer className="text-center mt-12 text-gray-500 text-sm">
           <p>
-            {showProfiles 
-              ? 'Save and manage multiple skill profiles with persistence'
-              : 'Adjust the sliders to see your skill octangle update in real-time'
-            }
+            {activeTab === 'chart' && 'Adjust the sliders to see your skill octangle update in real-time'}
+            {activeTab === 'profiles' && 'Save and manage multiple skill profiles with persistence'}
+            {activeTab === 'demo' && 'Showcase of styled-components and emotion CSS-in-JS libraries'}
           </p>
           <div className="mt-2 text-xs">
-            {showProfiles && '💡 Your data is automatically saved to your browser'}
+            {activeTab === 'profiles' && '💡 Your data is automatically saved to your browser'}
+            {activeTab === 'demo' && '🚀 Optimized with SWC plugins for better performance'}
           </div>
         </footer>
       </div>
