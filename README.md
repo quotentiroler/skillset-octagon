@@ -102,6 +102,17 @@ public/
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
+## Deployment
+
+This project deploys to GitHub Pages using GitHub Actions.
+
+- Workflow: `.github/workflows/deploy.yml`
+- Environment: `github-pages` (required by Pages deploy action)
+- Artifact: built from `dist` after `npm run build`
+- Vite base path: `vite.config.ts` sets `base: '/skillset-octagon/'` so assets resolve correctly when hosted at `https://quotentiroler.github.io/skillset-octagon/`.
+
+If you rename the repository or publish to a custom domain, update the `base` option accordingly.
+
 ## License
 
 MIT License
