@@ -15,7 +15,7 @@ function App() {
       <div className="container mx-auto px-4 py-8">
         <header className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <img src="/logo.svg" alt="Skill Octangle Logo" className="w-16 h-16" />
+            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Skill Octangle Logo" className="w-16 h-16" />
             <h1 className="text-4xl font-bold text-gray-800">
               Skill Octangle
             </h1>
