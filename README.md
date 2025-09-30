@@ -1,6 +1,6 @@
 # Skill Octangle
 
-A Tech Founder skill visualization web app that allows users to define and visualize 8 different entrepreneurial skills on an octagonal radar chart.
+A Tech Founder skill visualization web app that allows users to define and visualize 8 different entrepreneurial skills on an octagonal radar chart to see how well they match with other founders.
 
 ## Features
 
@@ -31,11 +31,13 @@ A Tech Founder skill visualization web app that allows users to define and visua
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -53,6 +55,7 @@ npm run dev
 ## Default Skills
 
 The app comes with 8 default Tech Founder skills:
+
 - **Vision** - Ability to see the big picture and future opportunities
 - **Leadership** - Capacity to inspire and guide teams effectively
 - **Technical** - Understanding of technology and product development
@@ -69,7 +72,7 @@ Each skill can be customized both in name and value (1-10 scale).
 The app includes custom octagon-themed branding:
 
 - **Logo** (`/public/logo.svg`): Full-size logo with octagonal radar chart design
-- **Favicon** (`/public/favicon.svg`): Scalable 32x32 favicon for modern browsers  
+- **Favicon** (`/public/favicon.svg`): Scalable 32x32 favicon for modern browsers
 - **Favicon ICO** (`/public/favicon.ico`): Legacy format for older browsers
 - **Octagonal Theme**: All visual elements follow the 8-sided polygon concept
 
@@ -106,14 +109,14 @@ MIT License
     extends: [
       // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
+    // Remove tseslint.configs.recommended and replace with this
       tseslint.configs.recommendedTypeChecked,
       // Alternatively, use this for stricter rules
       tseslint.configs.strictTypeChecked,
       // Optionally, add this for stylistic rules
       tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
+    // Other configs...
     ],
     languageOptions: {
       parserOptions: {
@@ -124,6 +127,7 @@ MIT License
     },
   },
 ])
+
 ```
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
